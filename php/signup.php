@@ -1,41 +1,25 @@
 <?php 
 
-if(isset($_POST['fname']) && 
-   isset($_POST['lname']) &&
-   isset($_POST['uname']) && 
-   isset($_POST['email']) &&
-   isset($_POST['pass'])){
-
     include "../db_conn.php";
 
-    $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
+    $fname = "dummy fname";
+    $lname = "dummy lname";
     $uname = $_POST['uname'];
-    $email = $_POST['email'];
+    $email = "dummy email";
     $pass = $_POST['pass'];
     
 
-    $data = "fname=".$fname."&uname=".$uname;
+    $data = "fname=".$uname;
     
-    if (empty($fname)) {
-    	$em = "First name is required";
-    	header("Location: ../index.php?error=$em&$data");
-	    exit;
-    }else if(empty($lname)){
-    	$em = "Last name is required";
-    	header("Location: ../index.php?error=$em&$data");
-	    exit;
-    }else if(empty($uname)){
+    
+    if(empty($uname)){
     	$em = "User name is required";
-    	header("Location: ../index.php?error=$em&$data");
+    	header("Location: ../signup.php?error=$em&$uname");
 	    exit;
-    }else if(empty($email)){
-    	$em = "Email name is required";
-    	header("Location: ../index.php?error=$em&$data");
-	    exit;
+    
     }else if(empty($pass)){
     	$em = "Password is required";
-    	header("Location: ../index.php?error=$em&$data");
+    	header("Location: ../signup.php?error=$em&$uname");
 	    exit;
     }else {
 
@@ -44,12 +28,6 @@ if(isset($_POST['fname']) &&
     	$stmt = $conn->prepare($sql);
     	$stmt->execute([$fname, $lname, $uname, $email, $pass]);
 
-    	header("Location: ../login.php");
+    	header("Location: ../index.php");
 	    exit;
     }
-
-
-}else {
-	header("Location: ../index.php?error=error");
-	exit;
-}

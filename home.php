@@ -6,7 +6,7 @@
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-	if (isset($_SESSION['id']) && isset($_SESSION['fname'])) { 
+	if (isset($_SESSION['id']) && isset($_SESSION['uname'])) { 
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,14 +23,14 @@ error_reporting(E_ALL);
 
 </head>
 <body>
-	<div id="header">
+	<div id="header" style= "background-color: black; ">
 		<img src="img/logo.jpg">
 		<label>Cello</label>
 		
 		<ul>
 			<li><a href="logout.php" class="">Logout</a></li>
 			<li><a href="home.php"><i class="icon-home"></i>Home</a></li>
-			<li><p class="display-4 ">Hello, <?=$_SESSION['fname']?></p></li>
+			<li><p class="display-4 ">Hello, <?=$_SESSION['uname']?></p></li>
 		</ul>
 	</div>
 			
@@ -120,7 +120,7 @@ error_reporting(E_ALL);
 
 <?php 
 }else {
-	header("Location: login.php");
+	header("Location: index.php");
 	exit;
 	}
 ?>

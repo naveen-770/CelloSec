@@ -43,6 +43,6 @@ Please ensure that your code adheres to the project's coding standards and conve
 
 ## Contact &colon;envelope&colon;
 
-If you have any questions, suggestions, or feedback regarding CelloSec, please feel free to reach out to me at X [twitter](https://x.com/vuld0/).
+If you have any questions, suggestions, or feedback regarding CelloSec, please feel free to reach out to me at [X](https://x.com/vuld0/).
 
 Happy hacking and enjoy the race!
